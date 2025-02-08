@@ -46,3 +46,4 @@ HTML/CSS/JavaScript: Building the frontend interface 🖥️
 
 🎥 Demo
 Check out the demo video below to see the project in action! 🔥👀
+https://www.linkedin.com/posts/indra-kumar-guda-983420279_threejs-3ddesign-webdevelopment-activity-7293928760892919808-PL8k?utm_source=share&utm_medium=member_android&rcm=ACoAAEPfJ3MBYyDElO_6hqVbt3MyM5VdtumHJjM
