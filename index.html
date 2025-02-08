@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Video Player with GUI</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+  <canvas class="webgl"></canvas>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.172.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.172.0/examples/jsm/",
+        "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.20/+esm"
+      }
+    }
+  </script>
+
+  <div id="welcomeMessage">
+    <span class="line">WELCOME</span>
+    <span class="line">TO</span>
+    <span class="line" id="thirdLine">MY ROOM</span>
+  </div>
+
+  <script>
+    // Timeout to apply strikethrough
+    setTimeout(() => {
+      const thirdLine = document.getElementById('thirdLine');
+      thirdLine.classList.add('strikethrough'); // Strikethrough effect
+
+      setTimeout(() => {
+        thirdLine.classList.add('fadeOutText'); // Fade-out effect
+
+        setTimeout(() => {
+          thirdLine.textContent = 'MY 3D ROOM'; // Replace text
+          thirdLine.classList.remove('fadeOutText', 'strikethrough'); // Remove old effects
+          thirdLine.classList.add('newText'); // Apply fade-in animation
+        }, 500); // Wait for fade-out to complete
+      }, 500); // Delay before fading out
+    }, 3000); // Initial delay before applying effects
+
+    // Fade out welcome message after a while
+    setTimeout(() => {
+      document.getElementById("welcomeMessage").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("welcomeMessage").style.display = "none";
+      }, 1000);
+    }, 6000);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.172.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
